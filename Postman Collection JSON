@@ -1,0 +1,117 @@
+1. Listings Endpoints
+POST /api/listings/
+
+Request body:
+
+{
+  "title": "Safari Trip",
+  "description": "3-day safari in Kenya",
+  "price": 200
+}
+
+
+Response (201 Created):
+
+{
+  "id": 1,
+  "title": "Safari Trip",
+  "description": "3-day safari in Kenya",
+  "price": "200.00"
+}
+
+GET /api/listings/
+
+Response (200 OK):
+
+[
+  {
+    "id": 1,
+    "title": "Safari Trip",
+    "description": "3-day safari in Kenya",
+    "price": "200.00"
+  }
+]
+
+PUT /api/listings/1/
+
+Request body:
+
+{
+  "title": "Safari Trip Deluxe",
+  "description": "5-day luxury safari in Kenya",
+  "price": 500
+}
+
+
+Response (200 OK):
+
+{
+  "id": 1,
+  "title": "Safari Trip Deluxe",
+  "description": "5-day luxury safari in Kenya",
+  "price": "500.00"
+}
+
+DELETE /api/listings/1/
+
+Response (204 No Content):
+(empty body)
+
+2. Bookings Endpoints
+POST /api/bookings/
+
+Request body:
+
+{
+  "listing": 1,
+  "user": 101,
+  "date": "2025-10-10"
+}
+
+
+Response (201 Created):
+
+{
+  "id": 1,
+  "listing": 1,
+  "user": 101,
+  "date": "2025-10-10"
+}
+
+GET /api/bookings/
+
+Response (200 OK):
+
+[
+  {
+    "id": 1,
+    "listing": 1,
+    "user": 101,
+    "date": "2025-10-10"
+  }
+]
+
+PUT /api/bookings/1/
+
+Request body:
+
+{
+  "listing": 1,
+  "user": 101,
+  "date": "2025-10-15"
+}
+
+
+Response (200 OK):
+
+{
+  "id": 1,
+  "listing": 1,
+  "user": 101,
+  "date": "2025-10-15"
+}
+
+DELETE /api/bookings/1/
+
+Response (204 No Content):
+(empty body)
