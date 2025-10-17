@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import Listing, Booking
+from .models import Listing, Booking, Payment
 from .serializers import ListingSerializer, BookingSerializer
 
 class ListingViewSet(viewsets.ModelViewSet):
@@ -18,4 +18,13 @@ class BookingViewSet(viewsets.ModelViewSet):
     """
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for Payment
+    Provides CRUD operations
+    """
+    queryset = Payment.objects.all()
+    serialzer_class = PaymentSerualizer
+    
 
